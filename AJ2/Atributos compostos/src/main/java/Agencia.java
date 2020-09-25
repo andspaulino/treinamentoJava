@@ -20,6 +20,9 @@ public class Agencia {
 
     private String numero;
     private Banco banco;
+    private int numeroProximaConta = 1455;
+    private int numeroContasAbertas = 0;
+    private Conta contas[];
 
     /**
      * @param num
@@ -27,9 +30,46 @@ public class Agencia {
      * @param bc
      *            banco ao qual a agencia pertence
      */
-    public Agencia(String num, Banco bc) {
-        numero = num;
-        banco = bc;
+    public Agencia(String num, Banco bc, int numeroMaxContas) {
+        this.numero = num;
+        this.banco = bc;
+        this.contas = new Conta[numeroMaxContas];
+    }
+    
+    /*
+     * Metodo abriContas
+     */
+    public Conta abrirConta(double saldo, Cliente cliente) {
+    	Conta novaConta = new Conta(saldo, "" + numeroProximaConta++, cliente, this);
+    	adicionaArrayContas(novaConta);
+    	return novaConta;
+    }
+    
+    /*
+     * Metodo para adicionar contas ao array de contas
+     */
+    private boolean adicionaArrayContas(Conta abrirNovaConta) {
+        if (this.contas.length <= numeroContasAbertas) {
+            System.out.println("Banco ERROR: Nao foi possivel criar uma nova conta");
+            return false;
+        } else {
+            System.out.println("Banco DEBUG: Conta adicionada ao array " + numeroContasAbertas);
+            this.contas[numeroContasAbertas] = abrirNovaConta;
+            numeroContasAbertas++;
+            return true;
+        }
+    }
+    
+    /*
+     * Metodo para imprimir contas
+     */
+    public void imprimeContas() { 
+        System.out.println("\n\n=============== RELATORIO DE CONTAS DA AGÊNCIA ==================\n");
+        System.out.println("Numero de contas abertas: " + numeroContasAbertas);
+        for (int i = 0; i < numeroContasAbertas; i++) {
+            contas[i].imprimeDados();
+        }
+        System.out.println("===============================================");
     }
 
     /**
