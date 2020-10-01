@@ -37,6 +37,7 @@ public class Banco {
     private Agencia agencias[];
     private int numAgenciasAbertas = 0;
     private static int numeroProximaAgencia = 1234;
+    private int numMaxContasPorAgencia = 7; //<--- Alterar aqui para aumentar a quantia de contas.
 
     /**
      * @param nome
@@ -95,7 +96,7 @@ public class Banco {
      * @return Agencia que foi criada
      */
     public Agencia abrirAgencia() {
-        Agencia a = new Agencia("" + numeroProximaAgencia++, this);
+        Agencia a = new Agencia("" + numeroProximaAgencia++, this, numMaxContasPorAgencia);
         boolean agenciaAdicionada = adicionaArrayAgencias(a);
         if (agenciaAdicionada) {
             return a;

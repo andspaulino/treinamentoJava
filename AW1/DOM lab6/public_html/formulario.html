@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criação Dinâmica de Elementos HTML</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/tabelas.css" />
+
+    <script>
+      <!--
+      var contador = 0;
+      function adicionarLinha() {
+        /*Selecionando a tabela*/
+        var table = document.getElementById("tabelaContatos");
+
+        /*Inserindo linha e colunas*/
+        var linha = table.insertRow(0);
+        var celula1 = linha.insertCell(0);
+        var celula2 = linha.insertCell(1);
+        var celula3 = linha.insertCell(2);
+        var celula4 = linha.insertCell(3);
+        var celula5 = linha.insertCell(4);
+
+        /*Preenchendo os input*/
+        /*Campos Nome*/
+        celula1.innerHTML = "Nome:";
+        celula2.innerHTML =
+          "<input name='nome" + contador + "' type='text' size='20' />";
+
+        /*Campo Telefone*/
+        celula3.innerHTML = "Telefone:";
+        celula4.innerHTML =
+          "<input name='telefone" + contador + "' type='text' size='10' />";
+        celula5.innerHTML =
+          "<input type='button' onclick='removerLinha(" +
+          contador++ +
+          ")' value='Remove Contato' />";
+      }
+      // opcional
+      function removerLinha(linhaId) {
+        var table = document
+          .getElementById("tabelaContatos")
+          .deleteRow(linhaId);
+        --contador;
+      }
+      -->
+    </script>
+  </head>
+  <body>
+    <div class="tabelaGC">
+      <table>
+        <tr>
+          <td class="coluna1"></td>
+          <td class="coluna2">Criação Dinâmica de Elementos HTML</td>
+          <td class="coluna3"></td>
+        </tr>
+      </table>
+
+      <form
+        name="formulario"
+        action="http://www.globalcode.com.br"
+        method="post"
+      >
+        <fieldset>
+          <legend>Cadastro de Contatos</legend>
+          <input type="button" onclick="adicionarLinha()" value="Adicionar" />
+          <table id="tabelaContatos">
+            <tr>
+              <td>Nome:</td>
+              <td>
+                <input name="nome1" type="text" size="20" />
+              </td>
+              <td>Telefone:</td>
+              <td>
+                <input name="telefone1" type="text" size="10" />
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

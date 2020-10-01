@@ -1,0 +1,42 @@
+p {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.produto1 {
+  color: #ff3300;
+}
+
+.produto2 {
+  color: #000099;
+}
+
+.produto3 {
+  color: #009900;
+}
+
+/*
+Adicionar aqui os estilos pedidos na apostila
+*/
+
+.titulo {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+table {
+  border-spacing: 5px;
+}
+
+.header {
+  font-family: Arial;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #858495;
+}
+
+.linha {
+  font-family: Verdana;
+  font-size: 13px;
+  color: #858495;
+  background-color: #eeeeee;
+}
