@@ -86,29 +86,39 @@
         // 5. Obter o campo telefone do documento HTML
         var campoTelefone = document.getElementById("telefone");
         // 6. Atribuir o conteudo do elemento telefone no campo
-
+        campoTelefone.value = telefone.firstChild.data;
         // 7. Obter o elemento <email> do elemento cliente
+        var email = cliente.getElementsByTagName("email").item(0);
         // 8. Obter o campo email do documento HTML
+        var campoEmail = document.getElementById("email");
         // 9. Atribuir o conteudo do elemento email no campo
-
+        campoEmail.value = email.firstChild.data;
         // 10. Obter o elemento <endereco> do elemento cliente
-        var endereco = null;
-
+        var endereco = cliente.getElementsByTagName("endereco").item(0);
         // 11. Obter o elemento <rua> do elemento endereco
+        var endereco = cliente.getElementsByTagName("rua").item(0);
         // 12. Obter o campo rua do documento HTML
+        var campoRua = document.getElementById("rua");
         // 13. Atribuir o conteudo do elemento rua no campo
-
+        campoRua.value = rua.firstChild.data;
         // 14. Obter o elemento <numero> do elemento endereco
+        var numero = endereco.getElementsByTagName("numero").item(0);
         // 15. Obter o campo numero do documento HTML
+        var campoNumero = document.getElementById("numero");
         // 16. Atribuir o conteudo do elemento numero no campo
-
+        campoNumero.value = numero.firstChild.data;
         // 17. Obter o elemento <bairro> do elemento endereco
+        var bairro = endereco.getElementsByTagName("bairro").item(0);
         // 18. Obter o campo bairro do documento HTML
+        var campoBairro = document.getElementById("bairro");
         // 19. Atribuir o conteudo do elemento bairro no campo
-
+        campoBairro.value = bairro.firstChild.data;
         // 20. Obter o elemento <cep> do elemento endereco
+        var cep = endereco.getElementsByTagName("cep").item(0);
         // 21. Obter o campo cep do documento HTML
+        var campoCep = document.getElementById("cep");
         // 22. Atribuir o conteudo do elemento cep no campo
+        campoCep.value = cep.firstChild.data;
       }
     </script>
   </head>
