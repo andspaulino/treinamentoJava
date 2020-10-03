@@ -22,8 +22,8 @@ public class TesteSetComGenerics {
 		clientes.add(c4);
 
 		//c. Impressao do nome dos clientes da colecao
-		for (Cliente c : clientes){
-			System.out.println("Nome: " + c.getNome());
+		for (Cliente cliente : clientes){
+			System.out.println("Nome: " + cliente.getNome());
 		}
 	}
 }
