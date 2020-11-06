@@ -5,32 +5,22 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import br.com.globalcode.util.GlobalcodeException;
+import br.com.globalcode.exception.GlobalcodeException;
 
 public class ConnectionManager {
 
-	private static final String DRIVER = "jdbc";
-	private static final String DB = "mysql";
-	private static final String HOST = "localhost";
-	private static final String IP = "3306";
-	private static final String DATABASE = "curso_epiousion";
-	private static final String TIMEZONE = "?useTimezone=true&serverTimezone=UTC";
-	private static final String USER = "anderson";
-	private static final String PASSWORD = "";
+        private static final String STR_DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DATABASE = "aw";
+    private static final String IP = "academias"; //"192.168.0.1";
+    private static final String STR_CON = "jdbc:mysql://" + IP + ":3306/" + DATABASE;
+    private static final String USER = "aw";
+    private static final String PASSWORD = "aw";
 
     public static Connection getConexao() throws GlobalcodeException {
         Connection conn = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(
-					ConnectionManager.DRIVER + ":" +
-					ConnectionManager.DB + "://" +
-					ConnectionManager.HOST + ":" +
-					ConnectionManager.IP + "/" +
-					ConnectionManager.DATABASE + 
-					ConnectionManager.TIMEZONE,
-					ConnectionManager.USER,
-					ConnectionManager.PASSWORD);
+            Class.forName(STR_DRIVER);
+            conn = DriverManager.getConnection(STR_CON, USER, PASSWORD);
             System.out.println("[ConnectionManager]: Obtendo conexao");
             return conn;
         } catch (ClassNotFoundException e) {
